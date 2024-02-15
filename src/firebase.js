@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 
 // TODO: Replace the following with your app's Firebase project configuration
- const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyAYXx96qzur31yjTi_Eu3Cn2q8WpS1KZxk",
     authDomain: "oracaodeia.firebaseapp.com",
     databaseURL: "https://oracaodeia-default-rtdb.europe-west1.firebasedatabase.app",
