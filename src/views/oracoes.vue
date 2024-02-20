@@ -20,6 +20,27 @@
 
 <script>
 
+import {db} from '../firebase'
+import {addDoc, collection} from 'firebase/firestore'
+
+export default {
+
+
+  async mounted() {
+
+    console.log(db.collection);
+
+
+    // const querySnapshot = await db.collection('pedidos').get();
+    // querySnapshot.forEach(doc => {
+    //   console.log("Id: ", doc.id, " => ", " name: ", doc['name'], " oracao: ", doc['oracao']);
+    // });
+
+  },
+}
+
+
+
 </script>
 
 <style>
