@@ -23,7 +23,8 @@
 <script>
 
 import 'firebase/firestore'
-
+import {addDoc, collection} from 'firebase/firestore'
+import {db} from '../firebase'
 
 export default {
 
@@ -37,12 +38,14 @@ export default {
   methods: {
     async submitForm() {
 
-      console.log(this.name)
+      console.log("Chamada 1")
 
-      /*const docRef = await addDoc(collection(db,"pedidos"),{
+      const docRef = await addDoc(collection(db,"pedidos"),{
         name: this.name,
         oracao: this.oracao
-      })*/
+      })
+
+      console.log("Chamada 2")
 
     }
 
