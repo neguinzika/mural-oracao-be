@@ -43,7 +43,14 @@ export default {
       const docRef = await addDoc(collection(db,"pedidos"),{
         name: this.name,
         oracao: this.oracao
-      })
+      }).then(() => {
+        this.name = '';
+        this.oracao = '';
+        alert("Pedido de Oração enviado com sucesso!")
+      }).catch((error) => {
+        alert("Erro ao enviar pedido de oração. Tente novamente mais tarde.")
+        console.error("Erro ao enviar pedido de oração", error)
+      });
 
       console.log("Chamada 2")
 
