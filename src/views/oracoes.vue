@@ -1,18 +1,23 @@
 <template>
-  <div id="container">
-    <div id="message-container" class="col-md-3">
+
+  <div class="container">
+
+
+    <div class="row">
+      <div id="message-container" class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="max-height: 500px; overflow-y: scroll;">
       <div v-for="pedido in pedidos" :key="pedido.id" class="message">
-
         <p>{{ pedido.oracao }}</p>
-
       </div>
     </div>
   </div>
+
+  </div>
+
 </template>
 
 <script>
-import { db } from '../firebase'
-import { collection, getDocs } from 'firebase/firestore'
+import {db} from '../firebase'
+import {collection, getDocs} from 'firebase/firestore'
 
 export default {
   data() {
@@ -24,42 +29,31 @@ export default {
     try {
       const querySnapshot = await getDocs(collection(db, "pedidos"));
       querySnapshot.forEach((doc) => {
-
         this.pedidos.push({ id: doc.id, ...doc.data() });
+        setTimeout(scrollMessages, 400);
       });
     } catch (error) {
       console.error("Erro ao recuperar pedidos:", error);
     }
   }
 }
+
+function scrollMessages() {
+  var container = document.getElementById("message-container");
+
+  console.log(container.scrollHeight);
+  console.log(container.scrollTop);
+
+  container.scrollTo({top: container.scrollTop + 1, behavior: 'smooth'});
+
+  setTimeout(scrollMessages, 10);
+
+}
+
 </script>
 
 <style>
 
-body {
-  font-family: Calibre, sans-serif;
-}
-
-#container {
-  max-height: 1%;
-}
-
-#message-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  animation: scrollMessage 45s linear infinite;
-
-}
-
-@keyframes scrollMessage {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
 
 
 </style>
