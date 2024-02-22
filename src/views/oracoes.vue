@@ -1,71 +1,188 @@
 <template>
-
-
   <div id="container">
-    <div id="message-container">
-      <div class="message">Pela saúde física e mental de todos os que estão enfrentando doenças e dificuldades.</div>
-      <div class="message"> Por aqueles que estão passando por momentos de angústia, para que encontrem conforto e paz.</div>
-      <div class="message">Pelas famílias que estão enfrentando dificuldades financeiras, para que encontrem soluções e sustento.</div>
-      <div class="message">Pelas vítimas de injustiça e violência, para que encontrem justiça e consolo.</div>
-      <div class="message">Pela reconciliação e cura em relacionamentos familiares e comunitários.</div>
-      <div class="message">Pela orientação e sabedoria daqueles que estão tomando decisões importantes.</div>
-      <div class="message">Pelos líderes mundiais, para que trabalhem pela paz e justiça em todo o mundo</div>
-      <div class="message">Pelos desabrigados e deslocados, para que encontrem abrigo, segurança e esperança.</div>
-      <div class="message">Pelos trabalhadores da linha de frente da pandemia, para que sejam protegidos e fortalecidos.</div>
-      <div class="message">Pela humildade e amor entre todas as pessoas, independentemente de suas diferenças.</div>
+    <div id="message-container" class="col-md-3">
+      <div v-for="pedido in pedidos" :key="pedido.id" class="message">
 
+        <p>{{ pedido.oracao }}</p>
+
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-
-import {db} from '../firebase'
-import {addDoc, collection} from 'firebase/firestore'
+import { db } from '../firebase'
+import { collection, getDocs } from 'firebase/firestore'
 
 export default {
-
-
-  async mounted() {
-
-    console.log(db.collection);
-
-
-    // const querySnapshot = await db.collection('pedidos').get();
-    // querySnapshot.forEach(doc => {
-    //   console.log("Id: ", doc.id, " => ", " name: ", doc['name'], " oracao: ", doc['oracao']);
-    // });
-
+  data() {
+    return {
+      pedidos: []
+    }
   },
+  async mounted() {
+    try {
+      const querySnapshot = await getDocs(collection(db, "pedidos"));
+      querySnapshot.forEach((doc) => {
+
+        this.pedidos.push({ id: doc.id, ...doc.data() });
+      });
+    } catch (error) {
+      console.error("Erro ao recuperar pedidos:", error);
+    }
+  }
 }
-
-
-
 </script>
 
 <style>
+
 body {
   font-family: Calibre, sans-serif;
-  margin: 2px;
-  padding: 0;
 }
 
 #container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  overflow: scroll;
+  max-height: 1%;
 }
 
 #message-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  animation: scrollMessage 45s linear infinite;
+
+}
+
+@keyframes scrollMessage {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <template>
+  <div class="container">
+    <div class="row">
+      <div class="col-3 col-md-3">
+        <div class="message-container">
+        <p class="animated-text"  v-for="pedido in pedidos" :key="pedido.id">{{ pedido.oracao }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>
+
+<script>
+import {db} from '../firebase'
+import {addDoc, collection, query, where, getDocs} from 'firebase/firestore'
+
+export default {
+  data() {
+    return {
+      pedidos: []
+    }
+  },
+  async mounted() {
+    try {
+      const querySnapshot = await getDocs(collection(db, "pedidos"));
+      querySnapshot.forEach((doc) => {
+        this.pedidos.push({id: doc.id, ...doc.data()});
+      });
+
+    } catch (error) {
+      console.error("Erro ao recuperar pedidos:", error);
+    }
+  }
+}
+
+</script>
+
+<style>
+
+.animated-text {
+  position: relative;
+animation-delay: 1s;
+  animation: scrollMessage 25s linear infinite;
+}
+
+@keyframes scrollMessage {
+  0% {
+    transform: translateY(50vmax);
+  }
+  100% {
+    transform: translateY(-60vmax);
+  }
+}
+
+
+/*
+body {
+  font-family: Calibre, sans-serif;
+
+
+  word-break: break-word;
+}
+
+#container {
+  display: flex;
+  line-height: normal;
+  overflow: scroll;
+}
+
+#message-container {
+
+  display:inline-flex;
+  flex-direction: column;
   align-items: center;
-  animation: scrollMessage 6s linear;
-}
+  animation: scrollMessage 1s linear;
+
 .message {
+  height: auto;
 }
+}
+
 
 @keyframes scrollMessage {
   0% {
@@ -77,13 +194,15 @@ body {
 }
 
 .message {
-  text-align: left;
-  padding: 4px;
+  margin: -9px;
+  padding: 0;
   color: rgb(15, 17, 15);
   font-size: 21px;
 }
 
-</style>
+*/
 
+</style>
+!-->
 
 

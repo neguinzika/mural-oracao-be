@@ -1,10 +1,7 @@
-@import './base.css';
+
 
 #app {
-  max-width: 100%;
-  margin: 30px;
-  padding: 0;
-  font-weight: normal;
+  margin: 25px;
 }
 
 a,
@@ -15,20 +12,37 @@ a,
   padding: 2px;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(103, 96%, 50%, 0.2);
-  }
-}
-
-@media (min-width:1800px ) { {
-  display: flex;
-  place-items:center;
-}}
 .form-control {
   width: 350px;
   background-color: rgb(253, 253, 253);
 align-content:center ;
 }
+
+.form-control2{
+  width: 350px;
+  background-color: rgb(253, 253, 253);
+  align-content:center ;
+  height: 25px;
+}
+
+:root {
+  background-image: url("oracao.jpeg");
+  background-size:100%;
+  background-repeat: no-repeat;
+}
+
+body {
+  text-align: center;
+  line-height: 35px;
+  font-family: "Calibre", serif;
+  font-size: 20px;
+}
+
+
+button {
+  height: 35px;
+  width: 100px;
+}
+
 
 
