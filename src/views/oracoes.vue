@@ -1,28 +1,33 @@
 <template>
-
+  <div class="filter">
+    <input type="date" v-model="dataInicio">
+    <input type="date" v-model="dataFim">
+    <button class="pause" @click="startAnimation"></button>
+  </div>
   <div class="container">
-
-
-    <div class="row">
-      <div id="message-container" class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="max-height: 500px; overflow-y: scroll;">
-      <div v-for="pedido in pedidos" :key="pedido.id" class="message">
+    <div id="message-container" :class="{ 'paused': isPaused }">
+      <div v-for="pedido in pedidosFiltrados" :key="pedido.id" class="message">
         <p>{{ pedido.oracao }}</p>
       </div>
     </div>
   </div>
 
-  </div>
-
 </template>
 
 <script>
+
+
+
 import {db} from '../firebase'
 import {collection, getDocs} from 'firebase/firestore'
 
 export default {
   data() {
     return {
-      pedidos: []
+      pedidos: [],
+      dataInicio: '',
+      dataFim: '',
+      isPaused: true
     }
   },
   async mounted() {
@@ -30,103 +35,26 @@ export default {
       const querySnapshot = await getDocs(collection(db, "pedidos"));
       querySnapshot.forEach((doc) => {
         this.pedidos.push({ id: doc.id, ...doc.data() });
-        setTimeout(scrollMessages, 400);
       });
     } catch (error) {
       console.error("Erro ao recuperar pedidos:", error);
-    }
-  }
-}
-
-function scrollMessages() {
-  var container = document.getElementById("message-container");
-
-  console.log(container.scrollHeight);
-  console.log(container.scrollTop);
-
-  container.scrollTo({top: container.scrollTop + 1, behavior: 'smooth'});
-
-  setTimeout(scrollMessages, 10);
-
-}
-
-</script>
-
-<style>
-
-
-
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-3 col-md-3">
-        <div class="message-container">
-        <p class="animated-text"  v-for="pedido in pedidos" :key="pedido.id">{{ pedido.oracao }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</template>
-
-<script>
-import {db} from '../firebase'
-import {addDoc, collection, query, where, getDocs} from 'firebase/firestore'
-
-export default {
-  data() {
-    return {
-      pedidos: []
     }
   },
-  async mounted() {
-    try {
-      const querySnapshot = await getDocs(collection(db, "pedidos"));
-      querySnapshot.forEach((doc) => {
-        this.pedidos.push({id: doc.id, ...doc.data()});
+  methods: {
+    startAnimation() {
+      const container = document.getElementById('message-container');
+      container.classList.toggle('paused');
+      this.isPaused = !this.isPaused;
+    }
+  },
+  computed: {
+    pedidosFiltrados() {
+      let startDate = new Date(this.dataInicio);
+      let endDate = new Date(this.dataFim);
+      return this.pedidos.filter(pedido => {
+        const pedidoData = pedido.data?.toDate();
+        return (!this.dataInicio || pedidoData >= startDate) && (!this.dataFim || pedidoData <= endDate);
       });
-
-    } catch (error) {
-      console.error("Erro ao recuperar pedidos:", error);
     }
   }
 }
@@ -135,68 +63,58 @@ export default {
 
 <style>
 
-.animated-text {
-  position: relative;
-animation-delay: 1s;
-  animation: scrollMessage 25s linear infinite;
+.filter {
+  position: absolute;
+  top: 0;
+  z-index: 6;
+} 
+
+.filter input  {
+  border: none;
+  background:silver
 }
 
-@keyframes scrollMessage {
-  0% {
-    transform: translateY(50vmax);
-  }
-  100% {
-    transform: translateY(-60vmax);
-  }
+.pause {
+  padding: 5px;
+  width: 26px;
+  height: 25px;
+  background-size: cover;
+  background-image: url("pause-play.png");
+
+
 }
 
-
-/*
-body {
-  font-family: Calibre, sans-serif;
-
-
-  word-break: break-word;
-}
-
-#container {
+.container {
+  overflow: hidden;
+  text-align: center;
+  justify-content: center;
   display: flex;
-  line-height: normal;
-  overflow: scroll;
+  height: 100vh;
+}
+
+.message {
+  text-shadow: 1px 1px 10px #ffffff;
 }
 
 #message-container {
-
-  display:inline-flex;
+  z-index: 5;
+  display: flex;
+  position: absolute;
+  width: 850px;
   flex-direction: column;
-  align-items: center;
-  animation: scrollMessage 1s linear;
-
-.message {
-  height: auto;
+  animation: scrollMessage 50s linear ;
 }
+#message-container.paused {
+  animation-play-state: paused ;
 }
-
 
 @keyframes scrollMessage {
   0% {
-    transform: translateX(120%);
+    transform: translateY(-110%);
   }
   100% {
-    transform: translateX(5px);
+    transform: translateY(100%);
   }
 }
 
-.message {
-  margin: -9px;
-  padding: 0;
-  color: rgb(15, 17, 15);
-  font-size: 21px;
-}
-
-*/
-
 </style>
-!-->
-
-

@@ -1,47 +1,60 @@
 
-
 #app {
-  margin: 25px;
+    margin: 2px;
 }
 
 a,
 .green {
-  text-decoration: chartreuse;
-  color: hsl(0, 0%, 100%);
-  transition: 0.4s;
-  padding: 2px;
+    text-decoration: chartreuse;
+    color: hsl(0, 0%, 100%);
+    transition: 0.4s;
+    padding: 2px;
 }
 
 .form-control {
-  width: 350px;
-  background-color: rgb(253, 253, 253);
-align-content:center ;
+    width: 350px;
+    background-color: rgb(253, 253, 253);
 }
 
-.form-control2{
-  width: 350px;
-  background-color: rgb(253, 253, 253);
-  align-content:center ;
-  height: 25px;
+.form-control2 {
+    width: 350px;
+    background-color: rgb(253, 253, 253);
+    height: 26px;
 }
 
-:root {
-  background-image: url("oracao.jpeg");
-  background-size:100%;
-  background-repeat: no-repeat;
+@media (max-width: 768px) {
+    :root {
+        background-image: url("oracao.jpeg");
+        background-size: auto;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 }
+
+@media (min-width: 767px) {
+    :root {
+        background-image: url("oracao.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+
 
 body {
-  text-align: center;
-  line-height: 35px;
-  font-family: "Calibre", serif;
-  font-size: 20px;
+    line-height: 30px;
+    font-family: "Calibre", serif;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    height: 100vh;
 }
 
 
 button {
-  height: 35px;
-  width: 100px;
+    height: 35px;
+    width: 100px;
 }
 
 

@@ -6,7 +6,7 @@ import {RouterLink, RouterView} from 'vue-router'
   <header>
 
     <nav>
-      <RouterLink to="/">Principal</RouterLink>
+      <RouterLink to="/">Pedidos</RouterLink>
       <RouterLink to="/about">Orações</RouterLink>
     </nav>
 
@@ -18,49 +18,34 @@ import {RouterLink, RouterView} from 'vue-router'
 <style scoped>
 
 header {
-  line-height: 0.9;
-  max-height: 100vh;
+  display:flex;
+  width: 100vw;
+  justify-content: end;
+
 }
 
 nav {
-  width: 100%;
-  font-size: 14px;
+  z-index: 6;
+  line-height: 0.9;
+  font-size: 13px;
   text-align: right;
-  margin-top: 10px;
+  padding:4px 10px;
 }
 
 nav a.router-link-exact-active {
-  color: var(--color-text);
+  color: #de6a0c;
+  background-color: antiquewhite;
 }
 
 nav a.router-link-exact-active:hover {
-  background-color: transparent;
+  background-color: white;
 }
 
 nav a {
+  background-color:  cadetblue;
   display: inline-block;
-  padding: 0 1rem;
-
+  padding: 5px;
 }
 
-nav a:first-of-type {
-  border: 0;
-}
 
-@media (min-width: 1200px) {
-  header {
-    display: flex;
-    place-items: center;
-
-  }
-
-  nav {
-    text-align: left;
-    margin-left: 2rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>

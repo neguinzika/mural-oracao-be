@@ -22,7 +22,7 @@
 <script>
 
 import 'firebase/firestore'
-import {addDoc, collection} from 'firebase/firestore'
+import {addDoc, collection, serverTimestamp } from 'firebase/firestore'
 import {db} from '../firebase'
 
 export default {
@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       name: '',
-      oracao: ''
+      oracao: '',
     }
   },
 
@@ -39,7 +39,8 @@ export default {
 
       const docRef = await addDoc(collection(db,"pedidos", ),{
         name: this.name,
-        oracao: this.oracao
+        oracao: this.oracao ,
+        data: serverTimestamp()
 
 
       }).then(() => {
