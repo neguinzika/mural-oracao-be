@@ -79,7 +79,7 @@ export default {
   width: 26px;
   height: 25px;
   background-size: cover;
-  background-image: url("pause-play.png");
+  background-image: url("../assets/pause-play.png");
 
 
 }
