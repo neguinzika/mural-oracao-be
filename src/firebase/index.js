@@ -3,15 +3,17 @@ import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
 
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: 'AIzaSyCY86i0Wonbt1ZpeWmpJ1NzNPXmKK8tqgM',
-    authDomain: 'projeto-oracao.firebaseapp.com',
-    projectId: 'projeto-oracao',
-    storageBucket: 'projeto-oracao.appspot.com',
-    messagingSenderId: '743445138565',
-    appId: '1:743445138565:web:7dac3f5d3df7ca4bc0edec'
-}
+    apiKey: "AIzaSyAqSLxNEN_OZkLO9sow7b3zMB73uPoUhIA",
+    authDomain: "mural-oracao-be.firebaseapp.com",
+    projectId: "mural-oracao-be",
+    storageBucket: "mural-oracao-be.appspot.com",
+    messagingSenderId: "1080880337769",
+    appId: "1:1080880337769:web:01916c773ad0fb9e39e3f8"
+};
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
