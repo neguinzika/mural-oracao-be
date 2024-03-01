@@ -17,7 +17,6 @@
 <script>
 
 
-
 import {db} from '../firebase'
 import {collection, getDocs} from 'firebase/firestore'
 
@@ -34,7 +33,7 @@ export default {
     try {
       const querySnapshot = await getDocs(collection(db, "pedidos"));
       querySnapshot.forEach((doc) => {
-        this.pedidos.push({ id: doc.id, ...doc.data() });
+        this.pedidos.push({id: doc.id, ...doc.data()});
       });
     } catch (error) {
       console.error("Erro ao recuperar pedidos:", error);
@@ -67,11 +66,11 @@ export default {
   position: absolute;
   top: 0;
   z-index: 6;
-} 
+}
 
-.filter input  {
+.filter input {
   border: none;
-  background:silver
+  background: silver
 }
 
 .pause {
@@ -81,7 +80,6 @@ export default {
   background-size: cover;
   background-image: url("../assets/pause-play.png");
 
-
 }
 
 .container {
@@ -90,6 +88,8 @@ export default {
   justify-content: center;
   display: flex;
   height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
 }
 
 .message {
@@ -98,23 +98,29 @@ export default {
 
 #message-container {
   z-index: 5;
+  overflow-y: auto;
   display: flex;
-  position: absolute;
-  width: 850px;
+  height: 100vh;
+  width: 75vw;
+  position: relative;
+  word-wrap: break-word;
   flex-direction: column;
-  animation: scrollMessage 50s linear ;
-}
-#message-container.paused {
-  animation-play-state: paused ;
+  animation: scrollMessage 50s linear;
 }
 
-@keyframes scrollMessage {
-  0% {
-    transform: translateY(-110%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
+#message-container.paused {
+  animation-play-state: paused;
 }
+
+
+  @keyframes scrollMessage {
+    0% {
+      transform: translateY(-110%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
 
 </style>

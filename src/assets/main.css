@@ -1,6 +1,7 @@
 
 #app {
     margin: 2px;
+    justify-content: center;
 }
 
 a,
@@ -17,6 +18,7 @@ a,
 }
 
 .form-control2 {
+
     width: 350px;
     background-color: rgb(253, 253, 253);
     height: 26px;
@@ -29,6 +31,7 @@ a,
         background-position: center;
         background-repeat: no-repeat;
     }
+
 }
 
 @media (min-width: 767px) {
@@ -50,7 +53,6 @@ body {
     display: flex;
     height: 100vh;
 }
-
 
 button {
     height: 35px;
