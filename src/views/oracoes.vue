@@ -103,7 +103,7 @@ export default {
   z-index: 5;
   width: 75vw;
   word-wrap: break-word;
-  animation: scrollMessage 40s linear;
+  animation: scrollMessage 45s linear;
 }
 
 #message-container.paused {
