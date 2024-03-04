@@ -1,7 +1,7 @@
 
 #app {
     margin: 2px;
-    justify-content: center;
+    height: 100vh;
 }
 
 a,
@@ -18,7 +18,6 @@ a,
 }
 
 .form-control2 {
-
     width: 350px;
     background-color: rgb(253, 253, 253);
     height: 26px;
@@ -30,8 +29,8 @@ a,
         background-size: auto;
         background-position: center;
         background-repeat: no-repeat;
-    }
 
+    }
 }
 
 @media (min-width: 767px) {
@@ -44,14 +43,12 @@ a,
 }
 
 
-
 body {
     line-height: 30px;
     font-family: "Calibre", serif;
     font-size: 20px;
     text-align: center;
-    display: flex;
-    height: 100vh;
+
 }
 
 button {

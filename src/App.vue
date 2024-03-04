@@ -1,6 +1,5 @@
 <script setup>
 import {RouterLink, RouterView} from 'vue-router'
-
 </script>
 <template>
   <header>
@@ -18,7 +17,7 @@ import {RouterLink, RouterView} from 'vue-router'
 <style scoped>
 
 header {
-  display:flex;
+  display: flex;
   width: 100vw;
   justify-content: end;
 
@@ -29,7 +28,7 @@ nav {
   line-height: 0.9;
   font-size: 13px;
   text-align: right;
-  padding:4px 10px;
+  padding: 4px 10px;
 }
 
 nav a.router-link-exact-active {
@@ -42,7 +41,7 @@ nav a.router-link-exact-active:hover {
 }
 
 nav a {
-  background-color:  cadetblue;
+  background-color: cadetblue;
   display: inline-block;
   padding: 5px;
 }
