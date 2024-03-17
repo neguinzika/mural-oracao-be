@@ -54,7 +54,45 @@ body {
 button {
     height: 35px;
     width: 100px;
+    color: blue;
+    border: blue solid 1px;
+    cursor: pointer;
 }
+
+.colocar-linha {
+    color: #08ad27;
+    border: #08ad27 solid 1px;
+}
+
+.colocar-linha:hover {
+    cursor: pointer;
+
+}
+
+.tirar-linha {
+    margin-left: 10px;
+    height: 29px;
+    width: 29px;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: #111111 solid 1.2px;
+    background-image: url("../assets/trash-can.png");
+}
+
+
+.tirar-linha:hover {
+    cursor: pointer;
+    border-color: red;
+}
+
+.margin {
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 

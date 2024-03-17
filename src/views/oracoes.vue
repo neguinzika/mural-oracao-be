@@ -66,7 +66,8 @@ export default {
 
 <style>
 .filter {
-  position: absolute;
+  text-align: left;
+  position: relative;
   top: 0;
   z-index: 6;
 }
@@ -74,15 +75,19 @@ export default {
 .filter input {
   border: none;
   background: silver;
+  cursor: pointer;
+  margin-left: 5px;
 }
 
 .pause {
+  margin-left: 10px;
   padding: 5px;
   width: 26px;
   height: 25px;
   background-size: cover;
   background-image: url("../assets/pause-play.png");
 }
+
 
 .message {
   text-shadow: 1px 1px 10px #ffffff;
