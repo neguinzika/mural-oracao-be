@@ -48,7 +48,7 @@ body {
     font-family: "Calibre", serif;
     font-size: 20px;
     text-align: center;
-
+    overflow-x: hidden;
 }
 
 button {

@@ -17,6 +17,7 @@ import {RouterLink, RouterView} from 'vue-router'
 <style scoped>
 
 header {
+  
   display: flex;
   width: 100vw;
   justify-content: end;
@@ -24,6 +25,7 @@ header {
 }
 
 nav {
+  margin-right: 13px;
   z-index: 6;
   line-height: 0.9;
   font-size: 13px;
