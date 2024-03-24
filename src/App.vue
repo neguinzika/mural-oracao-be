@@ -20,7 +20,7 @@ header {
   
   display: flex;
   width: 100vw;
-  justify-content: end;
+  justify-content: center;
 
 }
 

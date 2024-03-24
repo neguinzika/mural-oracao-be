@@ -1,19 +1,25 @@
 <template>
-  <div class="filter">
-    <input type="date" v-model="dataInicio">
-    <input type="date" v-model="dataFim">
-    <button class="pause" @click="toggleAnimation"></button>
-  </div>
-  <div class="scroll">
-    <div class="container">
-      <div id="message-container" :class="{ 'paused': isPaused }" >
+
+    <video autoplay loop muted class="video">
+      <source src="../video-bg/fundo.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="filter">
+      <input type="date" v-model="dataInicio">
+      <input type="date" v-model="dataFim">
+      <button class="pause" @click="toggleAnimation"></button>
+    </div>
+    <div class="scroll">
+      <div class="container">
+        <div id="message-container" :class="{ 'paused': isPaused }">
           <!-- :style="{ '--animation-duration': animationDuration }">-->
-        <div v-for="pedido in pedidosFiltrados" :key="pedido.id" class="message">
-          <p>{{ pedido.oracao }}</p>
+          <div v-for="pedido in pedidosFiltrados" :key="pedido.id" class="message">
+            <p>{{ pedido.oracao }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
 </template>
 
@@ -65,6 +71,20 @@ export default {
 </script>
 
 <style>
+@media video {
+
+}
+.video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+z-index: -1;
+}
+
 .filter {
   text-align: left;
   position: relative;
@@ -90,7 +110,9 @@ export default {
 
 
 .message {
-  text-shadow: 1px 1px 10px #ffffff;
+  z-index: 1;
+  color:white;
+  text-shadow: 1px 1px 12px #ffffff;
 }
 
 .scroll {
@@ -124,4 +146,6 @@ export default {
     transform: translateY(0);
   }
 }
+
+
 </style>

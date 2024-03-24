@@ -2,6 +2,7 @@
 #app {
     margin: 2px;
     height: 100vh;
+
 }
 
 a,
@@ -22,6 +23,7 @@ a,
     background-color: rgb(253, 253, 253);
     height: 26px;
 }
+
 
 @media (max-width: 768px) {
     :root {
@@ -49,6 +51,7 @@ body {
     font-size: 20px;
     text-align: center;
     overflow-x: hidden;
+
 }
 
 button {
