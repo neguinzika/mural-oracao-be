@@ -1,0 +1,67 @@
+
+a,
+.green {
+    text-decoration: chartreuse;
+    color: hsl(0, 0%, 100%);
+    transition: 0.8s;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+nav {
+    z-index: 6;
+    font-size: 12px;
+    padding: 7px;
+}
+
+.paginas {
+    border: 0.8px solid white;
+    margin: 3px;
+}
+
+nav a.router-link-exact-active {
+    color: #de6a0c;
+    background-color: antiquewhite;
+}
+
+nav a {
+    background-color: cadetblue;
+    display: inline-block;
+    padding: 5.6px;
+}
+
+@media (max-width: 768px) {
+
+    :root {
+        background-image: url("@/assets/oracao3.jpg");
+        background-size: cover;
+        background-position: 60%;
+        background-repeat: no-repeat;
+
+    }
+}
+
+
+@media (min-width: 767px) {
+    :root {
+        background-image: url("@/assets/oracao3.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+
+
+
+
