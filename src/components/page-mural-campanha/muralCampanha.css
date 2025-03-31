@@ -1,0 +1,20 @@
+.background {
+    height: 110vh;
+    width: 100vw;
+    background-image: url("@/assets/aaaa.svg");
+    background-position: 70%;
+    position: fixed;
+    background-size: cover;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.main {
+    margin-left: 3vw;
+    margin-right: 3vw;
+    color: #fdfdfd;
+    text-shadow: 1px 1px 1px black;
+    padding: 20px;
+}

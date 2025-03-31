@@ -1,0 +1,22 @@
+
+a,
+.green {
+    text-decoration: chartreuse;
+    color: hsl(0, 0%, 100%);
+    transition: 0.8s;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+* {
+    font-family: sans-serif;
+}
+
+
+
+
+
+
+

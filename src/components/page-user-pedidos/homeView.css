@@ -1,0 +1,108 @@
+button {
+    height: 35px;
+    width: 100px;
+    color: blue;
+    border: blue solid 1px;
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+p {
+    text-align: center;
+    color:whitesmoke;
+}
+h2, .form-label  {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+.colocar-linha {
+    color: #08ad27;
+    border: #08ad27 solid 1px;
+    border-radius: 10px;
+}
+
+
+.tirar-linha {
+    margin-left: 10px;
+    height: 29px;
+    width: 29px;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: #111111 solid 1.2px;
+    background-image: url("@/assets/trash-can.png");
+}
+
+
+.tirar-linha:hover {
+    cursor: pointer;
+    border-color: red;
+    border-radius: 7px;
+}
+
+.form-control {
+    width: 350px;
+    background-color: rgb(253, 253, 253);
+}
+
+
+.bg1 {
+    height:100vh;
+    overflow: auto;
+}
+.center {
+
+    line-height: 30px;
+    font-size: 22px;
+    text-align: center;
+    overflow: auto;
+}
+
+.margin {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+
+}
+
+textarea {
+    border-radius: 10px;
+    text-align: center;
+}
+.bg1 {
+    background-image: url("/src/assets/bibliabasico.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    position: fixed;
+    overflow: auto;
+}
+@media (max-width: 768px) {
+
+    :root {
+        background-image: url("/src/assets/oracao3.jpg");
+        background-size: cover;
+        background-position: 60%;
+        background-repeat: no-repeat;
+
+    }
+}
+
+@media (min-width: 767px) {
+    :root {
+        background-image: url("/src/assets/oracao3.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+
+

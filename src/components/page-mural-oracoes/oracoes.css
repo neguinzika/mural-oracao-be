@@ -1,0 +1,79 @@
+.background {
+    height: 110vh;
+    width: 100vw;
+    background-image: url("@/assets/ceu.jpg");
+    background-position: 70%;
+    position: fixed;
+    background-size: cover;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+
+}
+
+.filter {
+    text-align: left;
+    position: relative;
+    top: 0;
+}
+
+.filter input {
+    border: none;
+    background: silver;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.pause {
+    margin-left: 10px;
+    padding: 5px;
+    width: 26px;
+    height: 25px;
+    background-size: cover;
+    background-image: url("@/assets/pause-play.png");
+}
+
+
+.message {
+    padding: 20px;
+    color: white;
+    text-shadow: 1px 1px 7px black;
+}
+
+.scroll {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.container {
+    justify-content: center;
+    width: 80vw;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+#message-container {
+
+    width: 75vw;
+
+}
+
+#message-container.paused {
+    animation-play-state: paused;
+}
+
+
+@keyframes scrollMessage {
+    0% {
+        transform: translateY(-102%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.tudo {
+    height: 100vh;
+    overflow-y: hidden;
+}

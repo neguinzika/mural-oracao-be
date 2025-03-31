@@ -1,0 +1,107 @@
+* {
+    justify-content: center;
+}
+h2 {
+    color: white;
+    text-shadow: 1px 1px 10px black;
+}
+.bg1 {
+    background-image: url("/src/assets/foto.svg");
+    height: 100vh;
+    background-size: cover;
+    background-position: 40%;
+    background-repeat: no-repeat;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    position: fixed;
+    overflow: auto;
+}
+
+
+.main {
+
+    font-size: 20px;
+    height: 100%;
+    align-content: center;
+    text-align: center;
+
+}
+
+.inputs {
+    align-items: center;
+    textarea {
+        border-radius: 10px;
+        text-align: center;
+    }
+}
+
+.form-control {
+    height:60px;
+    width: 275px;
+    background-color: rgb(253, 253, 253);
+}
+
+button {
+    border-radius: 7px;
+}
+
+
+.btnAdicionar {
+    cursor: pointer;
+    color: #08ad27;
+    border: #08ad27 solid 1px;
+    border-radius: 7px;
+    height: 35px;
+    width: 100px;
+}
+
+.btnRemover {
+    margin-left: 10px;
+    height: 29px;
+    width: 29px;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: #111111 solid 1.2px;
+    background-image: url("@/assets/trash-can.png");
+}
+
+.btnRemover:hover {
+    cursor: pointer;
+    border-color: red;
+    border-radius: 7px;
+}
+
+.btnEnviar {
+    cursor: pointer;
+    height: 35px;
+    width: 100px;
+    color: blue;
+    border: blue solid 1px;
+    margin: 10px;
+    border-radius: 7px;
+
+}
+
+.margin {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+
+}
+
+span {
+    color: #ff0101;
+    text-shadow: 1px 1px 1px black;
+}
+
+.label1 {
+    text-shadow: 1px 1px 4px white;
+}
+
+
+

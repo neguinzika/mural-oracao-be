@@ -1,0 +1,50 @@
+.main {
+    color: white;
+    display: flex;
+    overflow: auto;
+    background-image: url("../../../assets/fundoMadeiraEscuro.jpg");
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top:0;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 5px;
+    flex-direction: column;
+    display: flex;
+}
+
+.content-right {
+    position: relative;
+    width: 80vw;
+    padding: 5px;
+}
+
+button {
+    margin-bottom: 10px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    color: azure;
+}
+
+button:hover {
+    background-color: brown;
+    font-size: 14px;
+}
+
+.sidebar button.selected {
+    background-color: brown;
+}
+
+
+.sidebar button {
+    padding: 10px;
+    margin-top: 10px;
+}

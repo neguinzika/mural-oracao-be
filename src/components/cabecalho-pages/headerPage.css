@@ -1,0 +1,28 @@
+header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+nav {
+    z-index: 6;
+    font-size: 12px;
+    padding: 7px;
+}
+
+nav a.router-link-exact-active {
+    color: #de6a0c;
+    background-color: antiquewhite;
+}
+
+nav a {
+    background-color: cadetblue;
+    display: inline-block;
+    padding: 5.6px;
+}
+
+.paginas {
+    border: 0.8px solid white;
+    margin: 3px;
+}
