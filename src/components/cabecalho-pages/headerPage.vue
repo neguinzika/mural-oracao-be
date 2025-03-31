@@ -16,7 +16,7 @@ export default {
       <nav>
         <RouterLink class="paginas" to="/">Pedido Oração</RouterLink>
         <RouterLink class="paginas" to="/campanhas">Pedido Campanha</RouterLink>
-        <RouterLink class="paginas" to="/oracoes">Mural de Orações</RouterLink>
+        <RouterLink class="paginas" to="/oracoes">Mural de Orações </RouterLink>
         <RouterLink class="paginas" to="/muralCampanha">Mural da Campanha</RouterLink>
       </nav>
     </header>
